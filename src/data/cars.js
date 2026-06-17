@@ -1,0 +1,561 @@
+export const carData = [
+  // --- SEDANS (10 Cars) ---
+  {
+    id: "sedan-1",
+    name: "Mercedes-Benz C-Class",
+    type: "Sedan",
+    price: 65,
+    image:
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "sedan-2",
+    name: "Mercedes-Benz E-Class",
+    type: "Sedan",
+    price: 85,
+    image:
+      "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Diesel",
+    ac: true,
+  },
+  {
+    id: "sedan-3",
+    name: "Toyota Camry Hybrid",
+    type: "Sedan",
+    price: 45,
+    image:
+      "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Hybrid",
+    ac: true,
+  },
+  {
+    id: "sedan-4",
+    name: "BMW 3 Series",
+    type: "Sedan",
+    price: 70,
+    image:
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 98",
+    ac: true,
+  },
+  {
+    id: "sedan-5",
+    name: "Audi A4 Quattro",
+    type: "Sedan",
+    price: 68,
+    image:
+      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "sedan-6",
+    name: "Honda Accord",
+    type: "Sedan",
+    price: 42,
+    image:
+      "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "sedan-7",
+    name: "Hyundai Sonata",
+    type: "Sedan",
+    price: 40,
+    image:
+      "https://images.unsplash.com/photo-1627454820516-dc767bcb4d3e?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "sedan-8",
+    name: "Tesla Model 3",
+    type: "Sedan",
+    price: 90,
+    image:
+      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&q=80&w=600",
+    transmission: "Electric",
+    fuel: "100% EV",
+    ac: true,
+  },
+  {
+    id: "sedan-9",
+    name: "Lexus ES 300h",
+    type: "Sedan",
+    price: 78,
+    image:
+      "https://images.unsplash.com/photo-1616422285623-13ff0162193c?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Hybrid",
+    ac: true,
+  },
+  {
+    id: "sedan-10",
+    name: "Nissan Altima",
+    type: "Sedan",
+    price: 39,
+    image:
+      "https://images.unsplash.com/photo-1681237303022-dfa6c4298e3b?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+
+  // --- SUVS (10 Cars) ---
+  {
+    id: "suv-1",
+    name: "Porsche Cayenne Coupe",
+    type: "SUV",
+    price: 120,
+    image:
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 98",
+    ac: true,
+  },
+  {
+    id: "suv-2",
+    name: "Porsche Macan S",
+    type: "SUV",
+    price: 95,
+    image:
+      "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "suv-3",
+    name: "Range Rover Sport",
+    type: "SUV",
+    price: 140,
+    image:
+      "https://images.unsplash.com/photo-1608519660915-41e1772241b0?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Diesel",
+    ac: true,
+  },
+  {
+    id: "suv-4",
+    name: "Audi Q7 S-Line",
+    type: "SUV",
+    price: 110,
+    image:
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Diesel",
+    ac: true,
+  },
+  {
+    id: "suv-5",
+    name: "BMW X5 M",
+    type: "SUV",
+    price: 130,
+    image:
+      "https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 98",
+    ac: true,
+  },
+  {
+    id: "suv-6",
+    name: "Jeep Grand Cherokee",
+    type: "SUV",
+    price: 75,
+    image:
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "suv-7",
+    name: "Toyota RAV4 Prime",
+    type: "SUV",
+    price: 55,
+    image:
+      "https://images.unsplash.com/photo-1619551461413-5a7a7bb6293f?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Hybrid",
+    ac: true,
+  },
+  {
+    id: "suv-8",
+    name: "Ford Explorer ST",
+    type: "SUV",
+    price: 70,
+    image:
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "suv-9",
+    name: "Volvo XC90 Ultimate",
+    type: "SUV",
+    price: 105,
+    image:
+      "https://images.unsplash.com/photo-1594568284297-7c64464062b1?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Hybrid",
+    ac: true,
+  },
+  {
+    id: "suv-10",
+    name: "Tesla Model Y",
+    type: "SUV",
+    price: 95,
+    image:
+      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&q=80&w=600",
+    transmission: "Electric",
+    fuel: "100% EV",
+    ac: true,
+  },
+
+  // --- SPORT (10 Cars) ---
+  {
+    id: "sport-1",
+    name: "Mercedes-AMG GT R",
+    type: "Sport",
+    price: 220,
+    image:
+      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 98",
+    ac: true,
+  },
+  {
+    id: "sport-2",
+    name: "Porsche 911 Turbo S",
+    type: "Sport",
+    price: 250,
+    image:
+      "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 98",
+    ac: true,
+  },
+  {
+    id: "sport-3",
+    name: "Ford Mustang Shelby",
+    type: "Sport",
+    price: 110,
+    image:
+      "https://images.unsplash.com/photo-1611245555447-e80ee5c66495?auto=format&fit=crop&q=80&w=600",
+    transmission: "Manual",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "sport-4",
+    name: "Chevrolet Corvette C8",
+    type: "Sport",
+    price: 130,
+    image:
+      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "sport-5",
+    name: "BMW M4 Competition",
+    type: "Sport",
+    price: 125,
+    image:
+      "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 98",
+    ac: true,
+  },
+  {
+    id: "sport-6",
+    name: "Audi R8 V10 Plus",
+    type: "Sport",
+    price: 240,
+    image:
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 98",
+    ac: true,
+  },
+  {
+    id: "sport-7",
+    name: "Nissan GT-R Nismo",
+    type: "Sport",
+    price: 180,
+    image:
+      "https://images.unsplash.com/photo-1695662137682-12f518e3a2be?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 98",
+    ac: true,
+  },
+  {
+    id: "sport-8",
+    name: "Toyota Supra GR",
+    type: "Sport",
+    price: 85,
+    image:
+      "https://images.unsplash.com/photo-1626847037657-fd3622613ce3?auto=format&fit=crop&q=80&w=600",
+    transmission: "Manual",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "sport-9",
+    name: "Dodge Charger Hellcat",
+    type: "Sport",
+    price: 120,
+    image:
+      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "sport-10",
+    name: "Aston Martin Vantage",
+    type: "Sport",
+    price: 210,
+    image:
+      "https://images.unsplash.com/photo-1606016159991-dfe4f974be5c?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 98",
+    ac: true,
+  },
+
+  // --- PICKUPS (10 Cars) ---
+  {
+    id: "pickup-1",
+    name: "Ford F-150 Raptor",
+    type: "Pickup",
+    price: 95,
+    image:
+      "https://images.unsplash.com/photo-1582270327334-118cf94cfcb7?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "pickup-2",
+    name: "RAM 1500 TRX",
+    type: "Pickup",
+    price: 115,
+    image:
+      "https://images.unsplash.com/photo-1605515298946-d062f2e9da53?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "pickup-3",
+    name: "Chevrolet Silverado",
+    type: "Pickup",
+    price: 65,
+    image:
+      "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Diesel",
+    ac: true,
+  },
+  {
+    id: "pickup-4",
+    name: "Toyota Tundra TRD",
+    type: "Pickup",
+    price: 75,
+    image:
+      "https://images.unsplash.com/photo-1591461972102-774431cc9c08?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "pickup-5",
+    name: "GMC Sierra Denali",
+    type: "Pickup",
+    price: 85,
+    image:
+      "https://images.unsplash.com/photo-1532581291347-9c39cf10a73c?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Diesel",
+    ac: true,
+  },
+  {
+    id: "pickup-6",
+    name: "Jeep Gladiator",
+    type: "Pickup",
+    price: 70,
+    image:
+      "https://images.unsplash.com/photo-1601362840469-51e4d8d59085?auto=format&fit=crop&q=80&w=600",
+    transmission: "Manual",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "pickup-7",
+    name: "Nissan Titan",
+    type: "Pickup",
+    price: 60,
+    image:
+      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "pickup-8",
+    name: "Rivian R1T Truck",
+    type: "Pickup",
+    price: 130,
+    image:
+      "https://images.unsplash.com/photo-1669837401587-f9a4cfe3126e?auto=format&fit=crop&q=80&w=600",
+    transmission: "Electric",
+    fuel: "100% EV",
+    ac: true,
+  },
+  {
+    id: "pickup-9",
+    name: "Toyota Tacoma",
+    type: "Pickup",
+    price: 50,
+    image:
+      "https://images.unsplash.com/photo-1610471852174-897db6742a78?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "pickup-10",
+    name: "Ford Ranger Wildtrak",
+    type: "Pickup",
+    price: 58,
+    image:
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Diesel",
+    ac: true,
+  },
+
+  // --- MINIVANS (10 Cars) ---
+  {
+    id: "minivan-1",
+    name: "Honda Odyssey Elite",
+    type: "Minivan",
+    price: 55,
+    image:
+      "https://images.unsplash.com/photo-1619551461413-5a7a7bb6293f?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "minivan-2",
+    name: "Toyota Sienna Limited",
+    type: "Minivan",
+    price: 60,
+    image:
+      "https://images.unsplash.com/photo-1632245889029-e406faaa34cd?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Hybrid",
+    ac: true,
+  },
+  {
+    id: "minivan-3",
+    name: "Chrysler Pacifica Hybrid",
+    type: "Minivan",
+    price: 65,
+    image:
+      "https://images.unsplash.com/photo-1611016186353-9af58c69a533?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Hybrid",
+    ac: true,
+  },
+  {
+    id: "minivan-4",
+    name: "Kia Carnival SX",
+    type: "Minivan",
+    price: 58,
+    image:
+      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "minivan-5",
+    name: "Chrysler Voyager",
+    type: "Minivan",
+    price: 45,
+    image:
+      "https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "minivan-6",
+    name: "Mercedes-Benz V-Class",
+    type: "Minivan",
+    price: 110,
+    image:
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Diesel",
+    ac: true,
+  },
+  {
+    id: "minivan-7",
+    name: "Volkswagen ID. Buzz",
+    type: "Minivan",
+    price: 95,
+    image:
+      "https://images.unsplash.com/photo-1675713400585-fb08fa943e0a?auto=format&fit=crop&q=80&w=600",
+    transmission: "Electric",
+    fuel: "100% EV",
+    ac: true,
+  },
+  {
+    id: "minivan-8",
+    name: "Kia Carnival Grand",
+    type: "Minivan",
+    price: 52,
+    image:
+      "https://images.unsplash.com/photo-1594568284297-7c64464062b1?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "PB 95",
+    ac: true,
+  },
+  {
+    id: "minivan-9",
+    name: "Mercedes Sprinter Tourer",
+    type: "Minivan",
+    price: 130,
+    image:
+      "https://images.unsplash.com/photo-1627454820516-dc767bcb4d3e?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Diesel",
+    ac: true,
+  },
+  {
+    id: "minivan-10",
+    name: "Renault Espace",
+    type: "Minivan",
+    price: 50,
+    image:
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Hybrid",
+    ac: true,
+  },
+];
