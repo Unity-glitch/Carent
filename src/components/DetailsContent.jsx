@@ -53,7 +53,7 @@ export default function DetailsContent() {
     },
     {
       label: "AC",
-      value: activeCar.ac ? "Available" : "No",
+      value: activeCar.ac ? "Yes" : "No",
       icon: <Snowflake size={20} className="text-gray-400" />,
     },
     {
