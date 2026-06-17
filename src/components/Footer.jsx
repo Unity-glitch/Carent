@@ -43,7 +43,7 @@ export default function Footer() {
       {/* Top Section: Branding & Contact Info */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 flex flex-col md:flex-row items-center md:justify-between gap-6 ">
         <a href="#" className="flex items-center gap-2 font-bold text-ink">
-          <Car size={22} /> Car Rental
+          <Car size={22} className="text-primary" /> Carent
         </a>
 
         {/* Contact Badges container: Centered on mobile, left-aligned on desktop */}
