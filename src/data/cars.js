@@ -337,18 +337,51 @@ export const carData = [
 
   // --- PICKUPS (10 Cars) ---
   {
-    id: "pickup-1",
-    name: "Ford F-150 Raptor",
+    id: "pickup-0",
+    name: "Volkswagen ID. Buzz",
     type: "Pickup",
     price: 95,
     image:
-      "https://images.unsplash.com/photo-1582270327334-118cf94cfcb7?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=600",
+    transmission: "Electric",
+    fuel: "100% EV",
+    ac: true,
+  },
+  {
+    id: "pickup-1",
+    name: "Kia Carnival Grand",
+    type: "Pickup",
+    price: 52,
+    image:
+      "https://images.unsplash.com/photo-1632245889029-e406faaa34cd?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "PB 95",
     ac: true,
   },
   {
     id: "pickup-2",
+    name: "Mercedes Sprinter Tourer",
+    type: "Pickup",
+    price: 130,
+    image:
+      "https://images.unsplash.com/photo-1627454820516-dc767bcb4d3e?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Diesel",
+    ac: true,
+  },
+  {
+    id: "pickup-3",
+    name: "Renault Espace",
+    type: "Pickup",
+    price: 50,
+    image:
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Hybrid",
+    ac: true,
+  },
+  {
+    id: "pickup-4",
     name: "RAM 1500 TRX",
     type: "Pickup",
     price: 115,
@@ -358,63 +391,64 @@ export const carData = [
     fuel: "PB 95",
     ac: true,
   },
-  {
-    id: "pickup-3",
-    name: "Chevrolet Silverado",
-    type: "Pickup",
-    price: 65,
-    image:
-      "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80&w=600",
-    transmission: "Automat",
-    fuel: "Diesel",
-    ac: true,
-  },
-  {
-    id: "pickup-4",
-    name: "Toyota Tundra TRD",
-    type: "Pickup",
-    price: 75,
-    image:
-      "https://images.unsplash.com/photo-1591461972102-774431cc9c08?auto=format&fit=crop&q=80&w=600",
-    transmission: "Automat",
-    fuel: "PB 95",
-    ac: true,
-  },
+
   {
     id: "pickup-5",
     name: "GMC Sierra Denali",
     type: "Pickup",
     price: 85,
     image:
-      "https://images.unsplash.com/photo-1532581291347-9c39cf10a73c?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1626847037657-fd3622613ce3?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "Diesel",
     ac: true,
   },
   {
     id: "pickup-6",
+    name: "Audi Q7 S-Line",
+    type: "Pickup",
+    price: 110,
+    image:
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Diesel",
+    ac: true,
+  },
+  {
+    id: "pickup-7",
+    name: "GMC Sierra Denali",
+    type: "Pickup",
+    price: 85,
+    image:
+      "https://images.unsplash.com/photo-1611016186353-9af58c69a533?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Diesel",
+    ac: true,
+  },
+  {
+    id: "pickup-8",
     name: "Jeep Gladiator",
     type: "Pickup",
     price: 70,
     image:
-      "https://images.unsplash.com/photo-1601362840469-51e4d8d59085?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=600",
     transmission: "Manual",
     fuel: "PB 95",
     ac: true,
   },
   {
-    id: "pickup-7",
+    id: "pickup-9",
     name: "Nissan Titan",
     type: "Pickup",
     price: 60,
     image:
-      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1675713400585-fb08fa943e0a?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "PB 95",
     ac: true,
   },
   {
-    id: "pickup-8",
+    id: "pickup-10",
     name: "Rivian R1T Truck",
     type: "Pickup",
     price: 130,
@@ -425,25 +459,47 @@ export const carData = [
     ac: true,
   },
   {
-    id: "pickup-9",
-    name: "Toyota Tacoma",
+    id: "pickup-11",
+    name: "Volkswagen ID. Buzz",
     type: "Pickup",
-    price: 50,
+    price: 95,
     image:
-      "https://images.unsplash.com/photo-1610471852174-897db6742a78?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1675713400585-fb08fa943e0a?auto=format&fit=crop&q=80&w=600",
+    transmission: "Electric",
+    fuel: "100% EV",
+    ac: true,
+  },
+  {
+    id: "pickup-12",
+    name: "Kia Carnival Grand",
+    type: "Pickup",
+    price: 52,
+    image:
+      "https://images.unsplash.com/photo-1594568284297-7c64464062b1?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "PB 95",
     ac: true,
   },
   {
-    id: "pickup-10",
-    name: "Ford Ranger Wildtrak",
+    id: "pickup-13",
+    name: "Mercedes Sprinter Tourer",
     type: "Pickup",
-    price: 58,
+    price: 130,
     image:
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1632245889029-e406faaa34cd?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "Diesel",
+    ac: true,
+  },
+  {
+    id: "pickup-14",
+    name: "Renault Espace",
+    type: "Pickup",
+    price: 50,
+    image:
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=600",
+    transmission: "Automat",
+    fuel: "Hybrid",
     ac: true,
   },
 
@@ -454,7 +510,7 @@ export const carData = [
     type: "Minivan",
     price: 55,
     image:
-      "https://images.unsplash.com/photo-1619551461413-5a7a7bb6293f?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "PB 95",
     ac: true,
@@ -487,7 +543,7 @@ export const carData = [
     type: "Minivan",
     price: 58,
     image:
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "PB 95",
     ac: true,
@@ -498,7 +554,7 @@ export const carData = [
     type: "Minivan",
     price: 45,
     image:
-      "https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "PB 95",
     ac: true,
@@ -520,7 +576,7 @@ export const carData = [
     type: "Minivan",
     price: 95,
     image:
-      "https://images.unsplash.com/photo-1675713400585-fb08fa943e0a?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=600",
     transmission: "Electric",
     fuel: "100% EV",
     ac: true,
@@ -531,7 +587,7 @@ export const carData = [
     type: "Minivan",
     price: 52,
     image:
-      "https://images.unsplash.com/photo-1594568284297-7c64464062b1?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1626847037657-fd3622613ce3?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "PB 95",
     ac: true,
