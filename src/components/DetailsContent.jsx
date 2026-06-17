@@ -52,7 +52,7 @@ export default function DetailsContent() {
       icon: <Fuel size={20} className="text-gray-400" />,
     },
     {
-      label: "Air Conditioner",
+      label: "AC",
       value: activeCar.ac ? "Available" : "No",
       icon: <Snowflake size={20} className="text-gray-400" />,
     },
