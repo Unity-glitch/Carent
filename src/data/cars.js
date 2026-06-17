@@ -50,7 +50,7 @@ export const carData = [
     type: "Sedan",
     price: 68,
     image:
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1616422285623-13ff0162193c?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "PB 95",
     ac: true,
@@ -140,7 +140,7 @@ export const carData = [
     type: "SUV",
     price: 140,
     image:
-      "https://images.unsplash.com/photo-1608519660915-41e1772241b0?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1626847037657-fd3622613ce3?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "Diesel",
     ac: true,
@@ -184,7 +184,7 @@ export const carData = [
     type: "SUV",
     price: 55,
     image:
-      "https://images.unsplash.com/photo-1619551461413-5a7a7bb6293f?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1605515298946-d062f2e9da53?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "Hybrid",
     ac: true,
@@ -206,7 +206,7 @@ export const carData = [
     type: "SUV",
     price: 105,
     image:
-      "https://images.unsplash.com/photo-1594568284297-7c64464062b1?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "Hybrid",
     ac: true,
@@ -252,7 +252,7 @@ export const carData = [
     type: "Sport",
     price: 110,
     image:
-      "https://images.unsplash.com/photo-1611245555447-e80ee5c66495?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&q=80&w=600",
     transmission: "Manual",
     fuel: "PB 95",
     ac: true,
@@ -274,7 +274,7 @@ export const carData = [
     type: "Sport",
     price: 125,
     image:
-      "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "PB 98",
     ac: true,
@@ -296,7 +296,7 @@ export const carData = [
     type: "Sport",
     price: 180,
     image:
-      "https://images.unsplash.com/photo-1695662137682-12f518e3a2be?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=600",
     transmission: "Automat",
     fuel: "PB 98",
     ac: true,
