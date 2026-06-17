@@ -2,7 +2,6 @@ import { useState } from "react";
 // 1. MAKE SURE THIS IMPORT PATH IS EXACTLY CRITICAL
 import { carData } from "../data/cars";
 import VehicleCard from "../cards/VehicleCard";
-import BrandCarousel from "../components/BrandCarousel";
 
 const categories = [
   "All Vehicles",
@@ -63,8 +62,6 @@ export default function VehiclesPage() {
           ))}
         </div>
       </section>
-
-      <BrandCarousel />
     </div>
   );
 }
