@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import BrandCarousel from "./components/BrandCarousel";
 
 import Home from "./pages/Home";
 import Vehicles from "./pages/Vehicles";
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/vehicles" element={<Vehicles />} />
         </Routes>
       </main>
+      <BrandCarousel />
       <Footer />
     </div>
   );
