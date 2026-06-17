@@ -1,4 +1,5 @@
 import { Settings2, Fuel, Snowflake } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function VehicleCard({
   id,
@@ -45,9 +46,12 @@ export default function VehicleCard({
         )}
       </div>
 
-      <button className="mt-auto bg-primary hover:bg-primary-dark text-white font-medium rounded-full py-3 transition-colors">
+      <Link
+        to={`/details/${id}`}
+        className="bg-blue-600 text-white text-center px-4 py-2 rounded-lg text-sm font-medium"
+      >
         View Details
-      </button>
+      </Link>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import BrandCarousel from "./components/BrandCarousel";
 
 import Home from "./pages/Home";
 import Vehicles from "./pages/Vehicles";
+import Details from "./pages/Details";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -15,6 +16,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/vehicles" element={<Vehicles />} />
+          <Route path="/details/:id" element={<Details />} />
         </Routes>
       </main>
       <BrandCarousel />
