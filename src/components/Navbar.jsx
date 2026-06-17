@@ -23,7 +23,7 @@ export default function Navbar() {
           className="flex items-center gap-2 font-bold text-lg text-ink"
         >
           <Car size={24} />
-          Car Rental
+          Carent
         </Link>
 
         {/* Desktop Nav */}
