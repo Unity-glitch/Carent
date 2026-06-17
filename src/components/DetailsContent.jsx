@@ -140,13 +140,13 @@ export default function DetailsContent() {
                       key={index}
                       className="bg-gray-50/70 border border-gray-100 p-3.5 rounded-xl flex flex-col gap-2"
                     >
-                      <div className="flex items-center gap-2">
+                      <div className="flex justify-center items-center gap-2">
                         {spec.icon}
-                        <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                        <span className="block text-xs text-center font-semibold text-gray-400 uppercase tracking-wider">
                           {spec.label}
                         </span>
                       </div>
-                      <span className="text-sm font-bold text-gray-800">
+                      <span className="text-sm text-center font-bold text-gray-800">
                         {spec.value}
                       </span>
                     </div>
