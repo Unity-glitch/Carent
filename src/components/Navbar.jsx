@@ -22,7 +22,7 @@ export default function Navbar() {
           to="/"
           className="flex items-center gap-1 font-bold text-lg text-ink"
         >
-          <Car size={24} />
+          <Car size={24} className="text-primary" />
           Carent
         </Link>
 
