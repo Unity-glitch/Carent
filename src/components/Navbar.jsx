@@ -20,7 +20,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="flex items-center gap-2 font-bold text-lg text-ink"
+          className="flex items-center gap-1 font-bold text-lg text-ink"
         >
           <Car size={24} />
           Carent
