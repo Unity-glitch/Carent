@@ -42,7 +42,7 @@ export default function DetailsContent() {
   // Specifications structured for the 4-card grid
   const specs = [
     {
-      label: "Gear box",
+      label: "Gear",
       value: activeCar.transmission || "Automat",
       icon: <Settings2 size={20} className="text-gray-400" />,
     },
