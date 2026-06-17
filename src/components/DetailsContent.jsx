@@ -146,7 +146,7 @@ export default function DetailsContent() {
                           {spec.label}
                         </span>
                       </div>
-                      <span className="text-sm text-center font-bold text-gray-800">
+                      <span className="text-xs sm:text-sm text-center font-bold text-gray-800">
                         {spec.value}
                       </span>
                     </div>
