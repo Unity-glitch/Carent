@@ -187,7 +187,7 @@ export default function DetailsContent() {
 
             {/* Action CTA Action Button Layout */}
             <div>
-              <button className="w-full sm:w-auto sm:mt-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl transition-all shadow-sm focus:outline-none">
+              <button className="w-full sm:w-auto mt-4 sm:mt-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl transition-all shadow-sm focus:outline-none">
                 Rent car
               </button>
             </div>
