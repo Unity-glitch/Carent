@@ -49,7 +49,7 @@ export default function DetailsContent() {
     {
       label: "Fuel",
       value: activeCar.fuel || "PB 95",
-      icon: <Fuel size={20} className="text-gray-400" />,
+      icon: <Fuel size={20} className="flex text-gray-400 " />,
     },
     {
       label: "AC",
