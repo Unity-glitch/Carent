@@ -1,11 +1,11 @@
 import Accordion from "../components/Accordion";
 import CustomerReviews from "../components/CustomerReviews";
-import DownloadAppTwo from "../components/DownloadAppTwo";
+import DownloadApp from "../components/DownloadApp";
 
 export default function About() {
   return (
     <div>
-      <DownloadAppTwo />
+      <DownloadApp />
       <CustomerReviews />
       <Accordion />
     </div>
