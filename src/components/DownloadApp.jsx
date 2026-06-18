@@ -1,6 +1,6 @@
 import appStoreImage from "../assets/app-play-store.svg";
 import googlePlayImage from "../assets/google-play-store.svg";
-import carVideo1 from "../assets/car-loop-1.mp4";
+import carVideo1 from "../assets/car-loop-3.mp4";
 import carVideo2 from "../assets/car-loop-2.mp4";
 
 export default function DownloadApp() {
