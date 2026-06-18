@@ -127,7 +127,7 @@ export default function Footer() {
         {/* App Downloads Column */}
         <div className="flex flex-col items-center sm:items-start">
           <h4 className="font-semibold text-ink mb-4">Download App</h4>
-          <div className="flex flex-col gap-2 items-center sm:items-start">
+          <div className="flex gap-2 justify-center sm:justify-start">
             <img
               className="w-30 cursor-pointer"
               src={appStoreImage}
