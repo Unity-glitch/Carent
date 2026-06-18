@@ -40,7 +40,7 @@ export default function Accordion({ items = faqsData }) {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto flex flex-col gap-4">
+    <div className="w-full max-w-3xl mx-auto flex flex-col gap-4 p-2">
       {items.map((item, index) => {
         const isOpen = openIndex === index;
         return (

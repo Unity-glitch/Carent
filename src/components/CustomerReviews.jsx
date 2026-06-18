@@ -40,33 +40,29 @@ export default function CustomerReviews() {
           {reviews.map((rev, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-100 rounded-3xl pt-8 px-6 pb-0 shadow-sm flex flex-col justify-between overflow-hidden relative"
+              className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col h-full"
             >
-              <div>
-                {/* Visual Quotation Graphics Mark */}
-                <span className="text-6xl font-serif font-black text-blue-600/20 block h-4 -mb-2 select-none">
-                  “
+              {/* Top section: quote mark + centered review text */}
+              <div className="bg-gray-50 flex-1 px-6 pt-8 pb-6">
+                <span className="text-5xl  font-serif font-black text-indigo-600 leading-none select-none">
+                  &ldquo;
                 </span>
-                <p className="text-sm text-gray-600 leading-relaxed mb-8 relative z-10">
+                <p className="text-sm text-gray-600 leading-relaxed mt-2 text-center">
                   {rev.text}
                 </p>
               </div>
 
-              {/* Bold Primary Footer Block Accent matching Figma layout specs */}
-              <div className="bg-blue-600 text-white p-4 mx-[-24px] flex items-center gap-3 mt-auto">
+              {/* Bottom purple block — avatar anchored to this section's top edge */}
+              <div className="bg-indigo-600 relative text-center px-6 pt-16 pb-6">
                 <img
                   src={rev.avatar}
                   alt={rev.name}
-                  className="w-10 h-10 rounded-full object-cover border-2 border-white/20 shrink-0"
+                  className="absolute left-1/2 -translate-x-1/2 -top-7   z-10 w-22 h-22 rounded-full object-cover border-6   border-white shadow-lg"
                 />
-                <div className="overflow-hidden">
-                  <h4 className="text-sm font-bold truncate leading-tight">
-                    {rev.name}
-                  </h4>
-                  <p className="text-xs text-blue-100 font-medium truncate mt-0.5">
-                    {rev.role}
-                  </p>
-                </div>
+                <p className="text-xs text-indigo-200 font-medium">
+                  {rev.role}
+                </p>
+                <h4 className="text-white font-bold mt-1">{rev.name}</h4>
               </div>
             </div>
           ))}
