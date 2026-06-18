@@ -33,7 +33,7 @@ export default function Hero() {
           </p>
           <div className="flex justify-center sm:justify-start">
             <button className="bg-accent hover:bg-accent-dark text-white font-semibold rounded-full px-7 py-3.5 transition-colors">
-              View all cars
+              Get Started
             </button>
           </div>
         </div>
