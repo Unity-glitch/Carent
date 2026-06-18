@@ -1,11 +1,11 @@
 import DetailsContent from "../components/DetailsContent";
-import VehiclesContent from "../components/VehiclesContent";
+import PopularCars from "../components/PopularCars";
 
 export default function Details() {
   return (
     <div>
-      {/* <VehiclesContent /> */}
       <DetailsContent />
+      <PopularCars />
     </div>
   );
 }
