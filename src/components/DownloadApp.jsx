@@ -1,8 +1,11 @@
-import { Apple, PlayCircle } from "lucide-react";
 import appStoreImage from "../assets/app-play-store.svg";
 import googlePlayImage from "../assets/google-play-store.svg";
+import carVideo1 from "../assets/car-loop-1.mp4";
+import carVideo2 from "../assets/car-loop-2.mp4";
 
 export default function DownloadApp() {
+  const carVideos = [carVideo1, carVideo2];
+
   return (
     <section className="px-6 md:px-12 max-w-7xl mx-auto py-16 grid lg:grid-cols-2 gap-10 items-center">
       <div>
@@ -31,11 +34,24 @@ export default function DownloadApp() {
         {[0, 1].map((i) => (
           <div
             key={i}
-            className={`w-40 h-80 rounded-[2.5rem] border-[6px] border-ink bg-white relative ${
+            className={`w-44 h-88 rounded-[2.5rem] border-[6px] border-black bg-black relative overflow-hidden shadow-xl ${
               i === 1 ? "mt-8" : ""
             }`}
           >
-            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-3 bg-ink rounded-full" />
+            {/* Phone Speaker/Camera Notch */}
+            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-3 bg-black rounded-full z-20" />
+
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              src={carVideos[i]}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+
+            {/* Subtle glass overlay to simulate phone screen surface glass */}
+            <div className="absolute inset-0 bg-black/5 pointer-events-none" />
           </div>
         ))}
       </div>
