@@ -30,7 +30,7 @@ export default function CustomerReviews() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Title Block Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-2xl font-extrabold text-gray-900 tracking-tight">
             Reviews from our customers
           </h2>
         </div>
