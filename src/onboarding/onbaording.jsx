@@ -38,7 +38,7 @@ export default function Onboarding() {
           </p>
 
           <Link
-            to="/signin"
+            to="/signup"
             className="inline-flex items-center justify-center w-full md:w-auto md:min-w-50 py-4 px-10 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-base tracking-wide shadow-lg shadow-blue-600/40 transition-all duration-200 hover:scale-[1.02] hover:shadow-blue-500/50"
           >
             Continue

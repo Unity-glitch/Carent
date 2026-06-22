@@ -8,8 +8,8 @@ import Vehicles from "./pages/Vehicles";
 import Details from "./pages/Details";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-// import SignIn from "./onboarding/SignIn";
-// import SignUp from "./onboarding/SignUp";
+import Signin from "./onboarding/Signin";
+import Signup from "./onboarding/Signup";
 
 import { Routes, Route, useLocation } from "react-router-dom";
 
@@ -27,8 +27,8 @@ export default function App() {
         <Routes>
           {/* Auth / Onboarding — fullscreen, no shell */}
           <Route path="/" element={<Onboarding />} />
-          {/* <Route path="/signin" element={<SignIn />} /> */}
-          {/* <Route path="/signup" element={<SignUp />} /> */}
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
 
           {/* Main app pages */}
           <Route path="/home" element={<Home />} />
