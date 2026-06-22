@@ -30,10 +30,12 @@ export default function Onboarding() {
         <StarField />
         {/* Bottom text + CTA */}
         <div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-3">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-3">
             Rent Premium Cars.
             <br />
-            <span className="text-blue-400">Anytime, Anywhere.</span>
+            <span className="text-blue-400 text-2xl md:text-4xl lg:text-5xl">
+              Anytime, Anywhere.
+            </span>
           </h1>
           <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-10 max-w-sm">
             Choose from economy to luxury. Hourly or daily rentals, all at the
