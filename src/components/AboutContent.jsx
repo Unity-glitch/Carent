@@ -139,7 +139,7 @@ export default function AboutContent() {
           >
             <button
               onClick={togglePlay}
-              className="w-14 h-14 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center shadow-lg transition-transform duration-200 hover:scale-110 focus:outline-none"
+              className="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center shadow-lg transition-transform duration-200 hover:scale-110 focus:outline-none"
             >
               {playing ? (
                 <svg
