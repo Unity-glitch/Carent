@@ -20,7 +20,7 @@ export default function SignIn() {
       className="min-h-screen bg-black relative overflow-hidden flex flex-col md:flex-row justify-center md:justify-start items-center"
       style={{
         backgroundImage: `url(${carBg})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundPosition: "right center",
         backgroundRepeat: "no-repeat",
       }}
@@ -28,7 +28,8 @@ export default function SignIn() {
       <StarField />
       {/* Ambient glow */}
       <div className="absolute top-25 left-1/2 -translate-x-1/2 w-125 h-100 bg-indigo-700 opacity-20 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-20 right-20 w-72 h-72 bg-amber-500 opacity-10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-20 left-20 w-72 h-72 bg-amber-500 opacity-10 blur-[100px] rounded-full pointer-events-none" />
+
       <div className="relative z-10 flex flex-col items-center justify-center w-full px-4 py-6 md:px-12 md:pl-20 md:w-1/2 md:items-start md:justify-center">
         <div className="w-full max-w-sm text-center md:text-left">
           {/* Logo + Brand */}

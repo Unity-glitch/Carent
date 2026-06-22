@@ -9,8 +9,8 @@ export default function Onboarding() {
       className="min-h-screen bg-black relative overflow-y-auto overflow-x-hidden flex flex-col md:flex-row"
       style={{
         backgroundImage: `url(${carBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "right center",
+        backgroundSize: "contain",
+        backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
@@ -18,7 +18,7 @@ export default function Onboarding() {
       <StarField />
       {/* ── Ambient glow blobs ── */}
       <div className="absolute top-20 left-20 w-80 h-80 bg-blue-700 opacity-20 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-15 right-15 w-72 h-72 bg-blue-500 opacity-15 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-26 bg-blue-800 opacity-15 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-800 opacity-10 blur-[150px] rounded-full pointer-events-none" />
 
       {/* ════════════════════════════════

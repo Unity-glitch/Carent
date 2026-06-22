@@ -35,7 +35,7 @@ export default function SignUp() {
       className="min-h-screen bg-black relative overflow-hidden flex flex-col md:flex-row justify-center md:justify-start items-center"
       style={{
         backgroundImage: `url(${carBg})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundPosition: "right center",
         backgroundRepeat: "no-repeat",
       }}
