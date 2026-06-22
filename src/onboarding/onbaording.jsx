@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import carBg from "../assets/car-1.jpeg";
+import StarField from "./StarField";
 
 export default function Onboarding() {
   return (
@@ -13,6 +14,8 @@ export default function Onboarding() {
         backgroundRepeat: "no-repeat",
       }}
     >
+      <StarField />
+      <StarField />
       {/* ── Ambient glow blobs ── */}
       <div className="absolute top-20 left-20 w-80 h-80 bg-blue-700 opacity-20 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-15 right-15 w-72 h-72 bg-blue-500 opacity-15 blur-[100px] rounded-full pointer-events-none" />
@@ -24,7 +27,7 @@ export default function Onboarding() {
       <div className="relative z-10 flex flex-col flex-1 px-7 pt-10 pb-20 md:px-12 md:pt-12 md:pb-12 md:w-1/2 md:justify-center md:items-start md:pl-20 items-center justify-end text-center md:text-left">
         {/* Car image — mobile only */}
         {/* mobile image removed — using same background on all sizes */}
-
+        <StarField />
         {/* Bottom text + CTA */}
         <div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-3">
@@ -45,6 +48,7 @@ export default function Onboarding() {
           </Link>
         </div>
       </div>
+      <StarField />
 
       {/* ════════════════════════════════
            RIGHT COLUMN — desktop only

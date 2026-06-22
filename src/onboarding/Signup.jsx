@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import carBg from "../assets/car-1.jpeg";
 import logo from "../assets/logo.png";
+import StarField from "./StarField";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -28,6 +29,7 @@ export default function SignUp() {
         backgroundRepeat: "no-repeat",
       }}
     >
+      <StarField />
       {/* Ambient glow */}
       <div className="absolute top-25 left-1/2 -translate-x-1/2 w-125 h-100 bg-indigo-700 opacity-20 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-20 left-20 w-72 h-72 bg-amber-500 opacity-10 blur-[100px] rounded-full pointer-events-none" />
