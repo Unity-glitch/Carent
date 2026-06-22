@@ -32,7 +32,7 @@ export default function Onboarding() {
             <br />
             <span className="text-blue-400">Anytime, Anywhere.</span>
           </h1>
-          <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-10 max-w-sm">
+          <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-10 max-w-sm">
             Choose from economy to luxury. Hourly or daily rentals, all at the
             best price.
           </p>
