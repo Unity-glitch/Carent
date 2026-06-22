@@ -3,28 +3,44 @@ import Footer from "./components/Footer";
 import BrandCarousel from "./components/BrandCarousel";
 
 import Home from "./pages/Home";
+import Onboarding from "./onboarding/onbaording";
 import Vehicles from "./pages/Vehicles";
 import Details from "./pages/Details";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+// import SignIn from "./onboarding/SignIn";
+// import SignUp from "./onboarding/SignUp";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+
+const AUTH_ROUTES = ["/", "/signin", "/signup"];
 
 export default function App() {
+  const location = useLocation();
+  const isAuthPage = AUTH_ROUTES.includes(location.pathname);
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Navbar />
+      {!isAuthPage && <Navbar />}
+
       <main className="grow">
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* Auth / Onboarding — fullscreen, no shell */}
+          <Route path="/" element={<Onboarding />} />
+          {/* <Route path="/signin" element={<SignIn />} /> */}
+          {/* <Route path="/signup" element={<SignUp />} /> */}
+
+          {/* Main app pages */}
+          <Route path="/home" element={<Home />} />
           <Route path="/vehicles" element={<Vehicles />} />
           <Route path="/details/:id" element={<Details />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-      <BrandCarousel />
-      <Footer />
+
+      {!isAuthPage && <BrandCarousel />}
+      {!isAuthPage && <Footer />}
     </div>
   );
 }
