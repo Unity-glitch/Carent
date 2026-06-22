@@ -169,7 +169,9 @@ export default function AboutContent() {
               <h3 className="text-base text-center sm:text-center md:text-left font-bold text-gray-900 mb-1">
                 {f.title}
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">{f.desc}</p>
+              <p className="text-sm text-gray-500 leading-relaxed text-center sm:text-center md:text-left">
+                {f.desc}
+              </p>
             </div>
           ))}
         </div>
