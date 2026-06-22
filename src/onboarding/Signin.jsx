@@ -43,7 +43,7 @@ export default function SignIn() {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Email */}
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-indigo-400">
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-white">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -69,7 +69,7 @@ export default function SignIn() {
 
             {/* Password */}
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-indigo-400">
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-white">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -94,7 +94,7 @@ export default function SignIn() {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-indigo-400 hover:text-indigo-200 transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-indigo-200 transition-colors"
               >
                 {showPassword ? (
                   <svg
