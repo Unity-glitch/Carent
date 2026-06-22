@@ -67,7 +67,6 @@ export default function SignUp() {
               </span>
               <input
                 type="email"
-                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
