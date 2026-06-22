@@ -109,7 +109,7 @@ export default function AboutContent() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 md:px-12 py-20 space-y-20">
+    <section className="max-w-7xl mx-auto px-6 md:px-12 py-8 space-y-20">
       {/* Left headline */}
       <div>
         <h2 className="text-3xl md:text-4xl text-center font-extrabold text-gray-900 leading-tight">
