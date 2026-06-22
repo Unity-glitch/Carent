@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
 import carBg from "../assets/car-bg.jpg";
+import StarField from "../onboarding/StarField";
+import { Star } from "lucide-react";
 
 export default function Hero() {
   const [rentalDate, setRentalDate] = useState("");
@@ -20,6 +22,7 @@ export default function Hero() {
       className="relative overflow-hidden bg-cover bg-center bg-black/60 bg-blend-overlay"
       style={{ backgroundImage: `url(${carBg})` }}
     >
+      <StarField />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.1),transparent_60%)]" />
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center">
@@ -38,6 +41,7 @@ export default function Hero() {
           </div>
         </div>
 
+        <StarField />
         {/* Booking Card */}
         <div className="relative z-10 bg-white rounded-2xl p-6 md:p-7 shadow-xl w-full max-w-sm lg:ml-auto">
           <h2 className="font-bold text-center text-xl text-ink mb-5">
@@ -124,7 +128,7 @@ export default function Hero() {
                 className="absolute inset-0 w-full h-full opacity-0 pointer-events-none"
               />
             </div>
-
+            <StarField />
             <button className="bg-accent hover:bg-accent-dark text-white font-semibold rounded-full py-3.5 mt-2 transition-colors w-full">
               Book now
             </button>

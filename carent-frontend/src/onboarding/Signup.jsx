@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import carBg from "../assets/car-1.jpeg";
 import logo from "../assets/logo.png";
 import StarField from "./StarField";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -14,9 +16,18 @@ export default function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!agreed) return alert("Please agree to the terms.");
-    if (password !== confirmPassword) return alert("Passwords don't match.");
-    // handle signup logic
+    if (!agreed)
+      return toast.error("You must agree to the terms and conditions.");
+    if (password !== confirmPassword)
+      // write logic for toast message and route to home if form is valid
+      return toast.error("Passwords do not match.");
+
+    // Simulate successful signup
+    toast.success("Account created successfully!");
+    // Redirect to home page after a short delay
+    setTimeout(() => {
+      window.location.href = "/home";
+    }, 1500);
   };
 
   return (
@@ -67,10 +78,11 @@ export default function SignUp() {
               </span>
               <input
                 type="email"
+                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full bg-[#131929] border border-indigo-900/60 text-white text-sm rounded-2xl pl-11 pr-4 py-4 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-indigo-300/30 transition-colors"
+                className="w-full bg-[#131929] border border-indigo-900/60 text-white text-sm rounded-2xl pl-11 pr-4 py-4 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-indigo-300/30"
               />
             </div>
 
@@ -97,12 +109,12 @@ export default function SignUp() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full bg-[#131929] border border-indigo-900/60 text-white text-sm rounded-2xl pl-11 pr-12 py-4 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-indigo-300/30 transition-colors"
+                className="w-full  bg-[#131929] border border-indigo-900/60 text-white text-sm rounded-2xl pl-11 pr-12 py-4 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-indigo-300"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-indigo-200 transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-indigo-200 "
               >
                 {showPassword ? (
                   <svg
@@ -164,12 +176,12 @@ export default function SignUp() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
-                className="w-full bg-[#131929] border border-indigo-900/60 text-white text-sm rounded-2xl pl-11 pr-12 py-4 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-indigo-300/30 transition-colors"
+                className="w-full bg-[#131929] border border-indigo-900/60 text-white text-sm rounded-2xl pl-11 pr-12 py-4 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-indigo-300"
               />
               <button
                 type="button"
                 onClick={() => setShowConfirm(!showConfirm)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-indigo-200 transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-indigo-200"
               >
                 {showConfirm ? (
                   <svg
@@ -230,7 +242,7 @@ export default function SignUp() {
                   </svg>
                 )}
               </div>
-              <span className="text-xs text-indigo-300 leading-relaxed">
+              <span className="text-xs text-indigo-300 leading-relaxed mt-1.5">
                 Agree To The{" "}
                 <Link
                   to="/terms"
