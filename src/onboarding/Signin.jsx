@@ -249,7 +249,7 @@ export default function SignIn() {
           </div>
 
           {/* Sign up link */}
-          <p className="text-center md:text-left text-sm text-indigo-300/60 mt-8">
+          <p className="text-center md:text-left text-sm text-indigo-300 mt-8">
             Don't have an account?{" "}
             <Link
               to="/signup"
