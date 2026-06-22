@@ -209,7 +209,7 @@ export default function AboutContent() {
           <h2 className="text-2xl text-center sm:text-center md:text-left md:text-4xl font-extrabold text-gray-900 leading-tight mb-5">
             Unlock unforgettable memories on the road
           </h2>
-          <p className="text-sm text-gray-500 leading-relaxed mb-8">
+          <p className="text-sm text-gray-500 text-center sm:text-center md:text-left leading-relaxed mb-8">
             From weekend escapes to cross-country adventures, our fleet puts you
             behind the wheel of the perfect car — every time.
           </p>
