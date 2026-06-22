@@ -239,7 +239,7 @@ export default function ContactContent() {
       </div>
 
       {/* ── Bottom: contact info bar ── */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {contactInfo.map((item) => (
           <div key={item.label} className="flex items-start gap-4">
             {/* Icon circle */}
