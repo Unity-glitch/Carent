@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import carBg from "../assets/car-1.jpg";
+import carBg from "../assets/car-1.jpeg";
 
 export default function Onboarding() {
   return (
