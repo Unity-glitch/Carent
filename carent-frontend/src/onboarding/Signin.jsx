@@ -20,7 +20,7 @@ export default function SignIn() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signin", {
+      const res = await fetch("http://192.168.1.5:5000/api/auth/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
