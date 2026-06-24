@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const links = [
-  { label: "Home", path: "/" },
+  { label: "Home", path: "/home" },
   { label: "Vehicles", path: "/vehicles" },
   { label: "Details", path: "/details/sedan-1" },
   { label: "About Us", path: "/about" },
@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link
-          to="/"
+          to="/home"
           className="flex items-center gap-1 font-bold text-lg text-ink"
         >
           <img src={logo} alt="Carent Logo" className="w-8 h-8" />

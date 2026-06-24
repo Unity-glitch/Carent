@@ -6,13 +6,8 @@ import StarField from "./StarField";
 export default function Onboarding() {
   return (
     <div
-      className="min-h-screen bg-black relative overflow-y-auto overflow-x-hidden flex flex-col md:flex-row"
-      style={{
-        backgroundImage: `url(${carBg})`,
-        backgroundSize: "contain",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="min-h-screen bg-no-repeat bg-right bg-cover md:bg-contain bg-black relative overflow-hidden flex flex-col md:flex-row justify-center md:justify-start items-center"
+      style={{ backgroundImage: `url(${carBg})` }}
     >
       <StarField />
       <StarField />
@@ -24,7 +19,7 @@ export default function Onboarding() {
       {/* ════════════════════════════════
            LEFT / MOBILE COLUMN
       ════════════════════════════════ */}
-      <div className="relative z-10 flex flex-col flex-1 px-7 pt-10 pb-20 md:px-12 md:pt-12 md:pb-12 md:w-1/2 md:justify-center md:items-start md:pl-20 items-center justify-end text-center md:text-left">
+      <div className="relative z-10 flex flex-col flex-1 px-7 pt-10 pb-20  md:items-center md:justify-center md:text-center md:pl-20 items-center justify-end text-center">
         {/* Car image — mobile only */}
         {/* mobile image removed — using same background on all sizes */}
         <StarField />

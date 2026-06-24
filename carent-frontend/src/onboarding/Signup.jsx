@@ -60,13 +60,8 @@ export default function SignUp() {
 
   return (
     <div
-      className="min-h-screen bg-black relative overflow-hidden flex flex-col md:flex-row justify-center md:justify-start items-center"
-      style={{
-        backgroundImage: `url(${carBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "right center",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="min-h-screen bg-no-repeat bg-right bg-cover md:bg-contain bg-black relative overflow-hidden flex flex-col md:flex-row justify-center md:justify-start items-center"
+      style={{ backgroundImage: `url(${carBg})` }}
     >
       <ToastContainer
         position="top-right"
@@ -79,7 +74,7 @@ export default function SignUp() {
       <div className="absolute top-25 left-1/2 -translate-x-1/2 w-125 h-100 bg-indigo-700 opacity-20 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-20 left-20 w-72 h-72 bg-amber-500 opacity-10 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="relative z-10 flex flex-col items-center justify-center w-full px-4 py-12 md:px-12 md:pl-20 md:w-1/2 md:items-start md:justify-center">
+      <div className="relative z-10 flex flex-col items-center justify-center w-full px-4 py-12  md:items-center md:justify-center md:text-center md:pl-20">
         <div className="w-full max-w-sm text-center md:text-left">
           {/* Logo + Brand */}
           <div className="flex items-center mb-4 justify-center md:justify-start">
