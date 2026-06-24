@@ -1,18 +1,44 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import carBg from "../assets/car-1.jpeg";
 import logo from "../assets/logo.png";
 import StarField from "./StarField";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [remember, setRemember] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const isDisabled = !email.trim() || !password.trim() || loading;
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // handle login logic
+    setLoading(true);
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/signin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.message || "Login failed. Please try again.");
+        return;
+      }
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+      toast.success(data.message || "Login successful!");
+      setTimeout(() => navigate("/home"), 1500);
+    } catch (err) {
+      toast.error("Network error. Please check your connection.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -20,30 +46,50 @@ export default function SignIn() {
       className="min-h-screen bg-black relative overflow-hidden flex flex-col md:flex-row justify-center md:justify-start items-center"
       style={{
         backgroundImage: `url(${carBg})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundPosition: "right center",
         backgroundRepeat: "no-repeat",
       }}
     >
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        theme="dark"
+        toastClassName="!bg-[#131929] !border !border-indigo-900/60 !text-white"
+      />
       <StarField />
-      {/* Ambient glow */}
       <div className="absolute top-25 left-1/2 -translate-x-1/2 w-125 h-100 bg-indigo-700 opacity-20 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-20 left-20 w-72 h-72 bg-amber-500 opacity-10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-20 right-20 w-72 h-72 bg-amber-500 opacity-10 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 flex flex-col items-center justify-center w-full px-4 py-6 md:px-12 md:pl-20 md:w-1/2 md:items-start md:justify-center">
         <div className="w-full max-w-sm text-center md:text-left">
-          {/* Logo + Brand */}
           <div className="flex items-center mb-4 justify-center md:justify-start">
             <img src={logo} alt="logo" className="w-12 h-12 rounded-md" />
             <h1 className="text-white font-bold text-2xl">Carent</h1>
           </div>
 
-          {/* Heading */}
           <h1 className="text-3xl font-extrabold text-white mb-8">
             Login To Your Account
           </h1>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4"
+            autoComplete="off"
+          >
+            <input
+              type="text"
+              name="fake_user"
+              style={{ display: "none" }}
+              readOnly
+            />
+            <input
+              type="password"
+              name="fake_pass"
+              style={{ display: "none" }}
+              readOnly
+            />
+
             {/* Email */}
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-white">
@@ -66,6 +112,8 @@ export default function SignIn() {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                name="signin_email"
+                autoComplete="one-time-code"
                 className="w-full bg-[#131929] border border-indigo-900/60 text-white text-sm rounded-2xl pl-11 pr-4 py-4 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-indigo-300/30 transition-colors"
               />
             </div>
@@ -92,6 +140,8 @@ export default function SignIn() {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                name="signin_password"
+                autoComplete="one-time-code"
                 className="w-full bg-[#131929] border border-indigo-900/60 text-white text-sm rounded-2xl pl-11 pr-12 py-4 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-indigo-300/30 transition-colors"
               />
               <button
@@ -172,24 +222,50 @@ export default function SignIn() {
             {/* Login button */}
             <button
               type="submit"
-              className="w-full py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-base tracking-wide shadow-lg shadow-indigo-600/40 transition-all duration-200 hover:shadow-indigo-500/50 hover:scale-[1.02] mt-2"
+              disabled={isDisabled}
+              className={`w-full py-4 rounded-2xl font-bold text-base tracking-wide transition-all duration-200 mt-2 flex items-center justify-center gap-2
+                ${isDisabled ? "bg-indigo-900/50 text-indigo-400 cursor-not-allowed" : "bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/40 hover:shadow-indigo-500/50 hover:scale-[1.02]"}`}
             >
-              Login
+              {loading ? (
+                <>
+                  <svg
+                    className="w-4 h-4 animate-spin"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v8H4z"
+                    />
+                  </svg>
+                  Logging in...
+                </>
+              ) : (
+                "Login"
+              )}
             </button>
           </form>
 
-          {/* OR divider */}
           <div className="flex items-center gap-3 my-6">
             <div className="flex-1 h-px bg-indigo-900/60" />
             <span className="text-xs text-indigo-400/60 font-medium">OR</span>
             <div className="flex-1 h-px bg-indigo-900/60" />
           </div>
 
-          {/* Social login */}
           <div className="flex justify-center gap-4">
             {[
               {
                 label: "Facebook",
+                bg: "bg-[#1877F2]",
                 icon: (
                   <svg
                     className="w-5 h-5 text-white"
@@ -199,10 +275,10 @@ export default function SignIn() {
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                   </svg>
                 ),
-                bg: "bg-[#1877F2]",
               },
               {
                 label: "Google",
+                bg: "bg-white",
                 icon: (
                   <svg className="w-5 h-5" viewBox="0 0 24 24">
                     <path
@@ -223,10 +299,10 @@ export default function SignIn() {
                     />
                   </svg>
                 ),
-                bg: "bg-white",
               },
               {
                 label: "Apple",
+                bg: "bg-gray-900",
                 icon: (
                   <svg
                     className="w-5 h-5 text-white"
@@ -236,7 +312,6 @@ export default function SignIn() {
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                   </svg>
                 ),
-                bg: "bg-gray-900",
               },
             ].map((s) => (
               <button
@@ -249,7 +324,6 @@ export default function SignIn() {
             ))}
           </div>
 
-          {/* Sign up link */}
           <p className="text-center md:text-left text-sm text-indigo-300 mt-8">
             Don't have an account?{" "}
             <Link
