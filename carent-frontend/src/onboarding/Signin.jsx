@@ -58,12 +58,14 @@ export default function SignIn() {
 
       <div className="relative z-10 flex flex-col items-center justify-center w-full px-4 py-6  md:items-center md:justify-center md:text-center md:pl-20">
         <div className="w-full max-w-sm text-center md:text-left">
-          <div className="flex items-center mb-4 justify-center md:justify-start">
-            <img src={logo} alt="logo" className="w-12 h-12 rounded-md" />
-            <h1 className="text-white font-bold text-2xl">Carent</h1>
+          <div className="flex items-center mb-4 justify-center md:justify-star cursor-pointer">
+            <Link to="/" className="flex justify-center items-center">
+              <img src={logo} alt="logo" className="w-12 h-12 rounded-md" />
+              <h1 className="text-white font-bold text-2xl">Carent</h1>
+            </Link>
           </div>
 
-          <h1 className="text-3xl font-extrabold text-white mb-8">
+          <h1 className="text-xl font-extrabold text-center text-white mb-8">
             Login To Your Account
           </h1>
 
