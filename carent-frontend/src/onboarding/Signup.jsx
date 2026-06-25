@@ -54,6 +54,12 @@ export default function SignUp() {
     }
   };
 
+  // Goole signup
+
+  const handleGoogleLogin = () => {
+    window.location.href = "http://192.168.1.29:5000/api/auth/google";
+  };
+
   return (
     <div
       className="min-h-screen bg-no-repeat bg-right bg-cover md:bg-contain bg-black relative overflow-hidden flex flex-col md:flex-row justify-center md:justify-start items-center"
@@ -374,6 +380,7 @@ export default function SignUp() {
               {
                 label: "Google",
                 bg: "bg-white",
+                onClick={handleGoogleLogin},
                 icon: (
                   <svg className="w-5 h-5" viewBox="0 0 24 24">
                     <path
