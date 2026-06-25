@@ -371,6 +371,7 @@ export default function SignUp() {
               {
                 label: "Facebook",
                 bg: "bg-[#1877F2]",
+                onClick: handleFacebookLogin,
                 icon: (
                   <svg
                     className="w-5 h-5 text-white"
