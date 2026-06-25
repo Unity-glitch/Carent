@@ -57,7 +57,7 @@ export default function SignUp() {
   // Goole signup
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://192.168.1.29:5000/api/auth/google";
+    window.location.href = "https://carent-ymkk.onrender.com/api/auth/google";
   };
 
   return (
@@ -380,7 +380,7 @@ export default function SignUp() {
               {
                 label: "Google",
                 bg: "bg-white",
-                onClick={handleGoogleLogin},
+                onClick: handleGoogleLogin,
                 icon: (
                   <svg className="w-5 h-5" viewBox="0 0 24 24">
                     <path
