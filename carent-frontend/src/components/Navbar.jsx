@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Car, Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-black.png";
 
 const links = [
   { label: "Home", path: "/home" },
@@ -21,10 +21,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/home"
-          className="flex items-center gap-1 font-bold text-lg text-ink"
+          className="flex items-center font-bold text-lg text-ink"
         >
-          <img src={logo} alt="Carent Logo" className="w-8 h-8" />
-          Carent
+          <img src={logo} alt="Carent Logo" className="w-18 h-18 m-left" />
+          <span className="m-left mt-1 text-1l">Carent</span>
         </Link>
 
         {/* Desktop Nav */}

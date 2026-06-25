@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import carBg from "../assets/car-1.jpeg";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-white.png";
 import StarField from "./StarField";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -79,7 +79,7 @@ export default function SignUp() {
           {/* Logo + Brand */}
           <div className="flex items-center mb-4 justify-center md:justify-star cursor-pointer">
             <Link to="/" className="flex justify-center items-center">
-              <img src={logo} alt="logo" className="w-12 h-12 rounded-md" />
+              <img src={logo} alt="logo" className="w-20 h-20 rounded-md" />
               <h1 className="text-white font-bold text-2xl">Carent</h1>
             </Link>
           </div>
@@ -296,7 +296,7 @@ export default function SignUp() {
                   </svg>
                 )}
               </div>
-              <span className="text-xs text-indigo-300 leading-relaxed">
+              <span className="text-xs text-indigo-300 leading-relaxed mt-0.5">
                 Agree To The{" "}
                 <Link
                   to="/terms"
