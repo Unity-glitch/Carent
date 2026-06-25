@@ -78,7 +78,7 @@ export default function SignUp() {
         <div className="w-full max-w-sm text-center md:text-left">
           {/* Logo + Brand */}
           <div className="flex items-center mb-4 justify-center md:justify-star cursor-pointer">
-            <Link to="/" className="flex justify-center items-center">
+            <Link to="/" className="flex justify-center items-center m-left">
               <img src={logo} alt="logo" className="w-20 h-20 rounded-md" />
               <h1 className="text-white font-bold text-2xl">Carent</h1>
             </Link>
