@@ -54,10 +54,14 @@ export default function SignUp() {
     }
   };
 
-  // Goole signup
-
+  // Goole Auth
   const handleGoogleLogin = () => {
     window.location.href = "https://carent-ymkk.onrender.com/api/auth/google"; // 👈 changed
+  };
+
+  // Facebook Auth
+  const handleFacebookLogin = () => {
+    window.location.href = "https://carent-ymkk.onrender.com/api/auth/facebook";
   };
 
   return (

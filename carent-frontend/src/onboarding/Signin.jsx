@@ -39,10 +39,15 @@ export default function SignIn() {
       setLoading(false);
     }
   };
-  // Goole signin
 
+  // Goole Auth
   const handleGoogleLogin = () => {
     window.location.href = "https://carent-ymkk.onrender.com/api/auth/google"; // 👈 changed
+  };
+
+  // Facebook Auth
+  const handleFacebookLogin = () => {
+    window.location.href = "https://carent-ymkk.onrender.com/api/auth/facebook";
   };
 
   return (
@@ -267,6 +272,7 @@ export default function SignIn() {
               {
                 label: "Facebook",
                 bg: "bg-[#1877F2]",
+                onClick: handleFacebookLogin,
                 icon: (
                   <svg
                     className="w-5 h-5 text-white"
