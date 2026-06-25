@@ -1,10 +1,16 @@
-// routes/auth.js
 import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
 const router = express.Router();
+
+const cookieOptions = {
+  httpOnly: true, // not accessible via JS
+  secure: false, // set true in production (HTTPS)
+  sameSite: "lax",
+  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+};
 
 // ── SIGN UP ──
 router.post("/signup", async (req, res) => {
@@ -25,9 +31,10 @@ router.post("/signup", async (req, res) => {
       expiresIn: "7d",
     });
 
+    res.cookie("token", token, cookieOptions);
+
     res.status(201).json({
       message: "Account created successfully!",
-      token,
       user: { id: user._id, email: user.email },
     });
   } catch (err) {
@@ -56,15 +63,22 @@ router.post("/signin", async (req, res) => {
       expiresIn: "7d",
     });
 
+    res.cookie("token", token, cookieOptions);
+
     res.status(200).json({
       message: "Login successful!",
-      token,
       user: { id: user._id, email: user.email },
     });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error. Please try again." });
   }
+});
+
+// ── SIGN OUT ──
+router.post("/signout", (req, res) => {
+  res.clearCookie("token");
+  res.status(200).json({ message: "Logged out successfully." });
 });
 
 export default router;

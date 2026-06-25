@@ -23,6 +23,7 @@ export default function SignUp() {
     !agreed ||
     loading;
 
+  // SIGNUP
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!agreed)
@@ -34,20 +35,15 @@ export default function SignUp() {
 
     setLoading(true);
     try {
-      const res = await fetch("http://192.168.1.5:5000/api/auth/signup", {
+      const res = await fetch("http://192.168.1.29:5000/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include", // 👈 required for cookies
         body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
 
-      if (!res.ok) {
-        toast.error(data.message || "Sign up failed. Please try again.");
-        return;
-      }
-
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      if (!res.ok) return toast.error(data.message || "Sign up failed.");
 
       toast.success(data.message || "Account created successfully!");
       setTimeout(() => navigate("/home"), 1500);

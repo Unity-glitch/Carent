@@ -16,22 +16,21 @@ export default function SignIn() {
 
   const isDisabled = !email.trim() || !password.trim() || loading;
 
+  // SIGNIN
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("http://192.168.1.5:5000/api/auth/signin", {
+      const res = await fetch("http://192.168.1.29:5000/api/auth/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include", // 👈 required for cookies
         body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
-      if (!res.ok) {
-        toast.error(data.message || "Login failed. Please try again.");
-        return;
-      }
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+
+      if (!res.ok) return toast.error(data.message || "Login failed.");
+
       toast.success(data.message || "Login successful!");
       setTimeout(() => navigate("/home"), 1500);
     } catch (err) {
