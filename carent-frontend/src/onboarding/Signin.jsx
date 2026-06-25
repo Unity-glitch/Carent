@@ -42,7 +42,7 @@ export default function SignIn() {
   // Goole signin
 
   const handleGoogleLogin = () => {
-    window.location.href = "https://carent-ymkk.onrender.com/api/auth/google";
+    window.location.href = "https://carent-ymkk.onrender.com/api/auth/google"; // 👈 changed
   };
 
   return (
