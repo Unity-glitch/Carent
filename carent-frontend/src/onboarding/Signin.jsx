@@ -320,15 +320,17 @@ export default function SignIn() {
             ))}
           </div>
 
-          <p className="text-center md:text-left text-sm text-indigo-300 mt-8">
-            Don't have an account?{" "}
-            <Link
-              to="/signup"
-              className="text-amber-400 hover:text-amber-300 font-bold transition-colors"
-            >
-              Sign Up
-            </Link>
-          </p>
+          <div className="flex justify-center mt-8">
+            <p className="text-center text-sm text-white">
+              Don't have an account?{" "}
+              <Link
+                to="/signup"
+                className="text-amber-400 hover:text-amber-300 font-bold transition-colors"
+              >
+                Sign Up
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </div>

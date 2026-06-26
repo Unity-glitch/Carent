@@ -19,7 +19,7 @@ export default function Onboarding() {
       {/* ════════════════════════════════
            LEFT / MOBILE COLUMN
       ════════════════════════════════ */}
-      <div className="relative z-10 flex flex-col flex-1 px-7 pt-10 pb-20  md:items-center md:justify-center md:text-center md:pl-20 items-center justify-end text-center">
+      <div className="relative z-10 flex flex-col flex-1 px-7 pt-10 pb-20  md:items-center md:justify-center md:text-center  items-center justify-end text-center">
         {/* Car image — mobile only */}
         {/* mobile image removed — using same background on all sizes */}
         <StarField />

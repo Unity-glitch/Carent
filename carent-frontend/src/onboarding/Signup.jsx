@@ -418,16 +418,17 @@ export default function SignUp() {
               </button>
             ))}
           </div>
-
-          <p className="text-center md:text-left text-sm text-indigo-300 mt-8">
-            Already have an account?{" "}
-            <Link
-              to="/signin"
-              className="text-amber-400 hover:text-amber-300 font-bold transition-colors"
-            >
-              Login
-            </Link>
-          </p>
+          <div className="flex justify-center mt-8">
+            <p className="text-center md:text-left text-sm text-white">
+              Already have an account?{" "}
+              <Link
+                to="/signin"
+                className="text-amber-400 hover:text-amber-300 font-bold transition-colors"
+              >
+                Login
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </div>
