@@ -80,17 +80,17 @@ export default function SignUp() {
       <div className="absolute top-25 left-1/2 -translate-x-1/2 w-125 h-100 bg-indigo-700 opacity-20 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-20 left-20 w-72 h-72 bg-amber-500 opacity-10 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="relative z-10 flex flex-col items-center justify-center w-full px-4 py-12  md:items-center md:justify-center md:text-center md:pl-20">
+      <div className="relative z-10 flex flex-col items-center justify-center w-full px-4 py-4  md:items-center md:justify-center md:text-center md:pl-20">
         <div className="w-full max-w-sm text-center md:text-left">
           {/* Logo + Brand */}
-          <div className="flex items-center mb-4 justify-center md:justify-star cursor-pointer">
+          <div className="flex items-center mb-3 justify-center md:justify-star cursor-pointer">
             <Link to="/" className="flex justify-center items-center m-left">
               <img src={logo} alt="logo" className="w-20 h-20 rounded-md" />
               <h1 className="text-white font-bold text-2xl">Carent</h1>
             </Link>
           </div>
 
-          <h1 className="text-2xl font-extrabold text-center text-white mb-8">
+          <h1 className="text-2xl font-extrabold text-center text-white mb-6">
             Create Your Account
           </h1>
 
@@ -418,7 +418,7 @@ export default function SignUp() {
               </button>
             ))}
           </div>
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center mt-2">
             <p className="text-center md:text-left text-sm text-white">
               Already have an account?{" "}
               <Link
