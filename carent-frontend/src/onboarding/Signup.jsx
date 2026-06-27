@@ -16,6 +16,13 @@ export default function SignUp() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // Add this at the top of your component
+  useEffect(() => {
+    if (window.location.hash === "#_=_") {
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+  }, []);
+
   const isDisabled =
     !email.trim() ||
     !password.trim() ||
