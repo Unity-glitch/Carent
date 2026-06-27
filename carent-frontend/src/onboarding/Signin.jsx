@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import carBg from "../assets/car-1.jpeg";
 import logo from "../assets/logo-white.png";
@@ -15,6 +15,12 @@ export default function SignIn() {
   const navigate = useNavigate();
 
   const isDisabled = !email.trim() || !password.trim() || loading;
+
+  useEffect(() => {
+    if (window.location.hash === "#_=_") {
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+  }, []);
 
   // SIGNIN
   const handleSubmit = async (e) => {

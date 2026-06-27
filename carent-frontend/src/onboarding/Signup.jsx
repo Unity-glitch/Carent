@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import carBg from "../assets/car-1.jpeg";
 import logo from "../assets/logo-white.png";
@@ -16,19 +16,19 @@ export default function SignUp() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Add this at the top of your component
-  useEffect(() => {
-    if (window.location.hash === "#_=_") {
-      window.history.replaceState(null, null, window.location.pathname);
-    }
-  }, []);
-
   const isDisabled =
     !email.trim() ||
     !password.trim() ||
     !confirmPassword.trim() ||
     !agreed ||
     loading;
+
+  // Add this at the top of your component
+  useEffect(() => {
+    if (window.location.hash === "#_=_") {
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+  }, []);
 
   // SIGNUP
   const handleSubmit = async (e) => {
@@ -42,12 +42,16 @@ export default function SignUp() {
 
     setLoading(true);
     try {
-      const res = await fetch("http://192.168.1.29:5000/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include", // 👈 required for cookies
-        body: JSON.stringify({ email, password }),
-      });
+      const res = await fetch(
+        "https://carent-ymkk.onrender.com/api/auth/signup",
+        {
+          // 👈 changed
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ email, password }),
+        },
+      );
       const data = await res.json();
 
       if (!res.ok) return toast.error(data.message || "Sign up failed.");
