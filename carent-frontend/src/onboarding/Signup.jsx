@@ -371,7 +371,7 @@ export default function SignUp() {
             </button>
           </form>
 
-          <div className="flex items-center gap-3 my-6">
+          <div className="flex items-center gap-3 my-3">
             <div className="flex-1 h-px bg-indigo-900/60" />
             <span className="text-xs text-indigo-400/60 font-medium">OR</span>
             <div className="flex-1 h-px bg-indigo-900/60" />
@@ -429,7 +429,7 @@ export default function SignUp() {
               </button>
             ))}
           </div>
-          <div className="flex justify-center mt-2">
+          <div className="flex justify-center mt-4">
             <p className="text-center md:text-left text-sm text-white">
               Already have an account?{" "}
               <Link

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Car, Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo-black.png";
+import Logout from "../components/Logout";
 
 const links = [
   { label: "Home", path: "/home" },
@@ -51,10 +52,6 @@ export default function Navbar() {
             <span className="bg-primary text-white rounded-full p-2.5">
               <Phone size={18} />
             </span>
-            <div className="text-sm">
-              <p className="text-muted">Need help?</p>
-              <p className="font-semibold text-ink">+996 247-1680</p>
-            </div>
           </div>
 
           <button className="lg:hidden" onClick={() => setOpen(!open)}>
@@ -62,6 +59,7 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+      <Logout />
 
       {/* Mobile menu */}
       {open && (
