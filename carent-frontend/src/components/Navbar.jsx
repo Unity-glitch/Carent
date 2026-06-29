@@ -49,9 +49,7 @@ export default function Navbar() {
         {/* Right side */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex items-center gap-3">
-            <span className="bg-primary text-white rounded-full p-2.5">
-              <Phone size={18} />
-            </span>
+            <Logout />
           </div>
 
           <button className="lg:hidden" onClick={() => setOpen(!open)}>
@@ -59,7 +57,6 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-      <Logout />
 
       {/* Mobile menu */}
       {open && (
@@ -79,12 +76,7 @@ export default function Navbar() {
             </Link>
           ))}
 
-          <a
-            href="tel:+9962471680"
-            className="bg-primary text-white p-3 rounded-full"
-          >
-            <Phone size={20} />
-          </a>
+          <Logout />
         </div>
       )}
     </header>
