@@ -1,10 +1,10 @@
 import { Car, Users, Award, Gauge } from "lucide-react";
 
 const stats = [
-  { icon: Car, value: "540+", label: "Cars" },
-  { icon: Users, value: "20k+", label: "Customers" },
-  { icon: Award, value: "25+", label: "Years" },
-  { icon: Gauge, value: "20m+", label: "Miles" },
+  { icon: Car, value: "540+", label: "Premium vehicles" },
+  { icon: Users, value: "20k+", label: "Happy customers" },
+  { icon: Award, value: "25+", label: "Years experience" },
+  { icon: Gauge, value: "20m+", label: "Miles driven" },
 ];
 
 export default function Stats() {
@@ -18,12 +18,15 @@ export default function Stats() {
         />
 
         <div className="relative z-10">
+          <p className="text-sm uppercase tracking-[0.3em] text-white/70 mb-3">
+            Trusted and growing
+          </p>
           <h2 className="text-white font-bold text-3xl mb-3">
-            Facts In Numbers
+            Professional service you can count on
           </h2>
           <p className="text-white/70 max-w-md mx-auto mb-10 text-sm">
-            A growing fleet and a community of drivers who keep choosing us trip
-            after trip.
+            Reliable vehicle access, transparent pricing, and support that keeps
+            you moving.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">

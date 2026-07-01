@@ -12,7 +12,7 @@ import {
 const links = [
   { label: "Home", path: "/home" },
   { label: "Vehicles", path: "/vehicles" },
-  { label: "Details", path: "/details/sedan-1" },
+  { label: "Orders", path: "/orders" },
   { label: "About Us", path: "/about" },
   { label: "Contact Us", path: "/contact" },
 ];

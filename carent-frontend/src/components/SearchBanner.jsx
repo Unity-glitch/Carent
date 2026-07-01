@@ -12,22 +12,24 @@ export default function SearchBanner() {
 
         <div className="relative z-10 max-w-md">
           <h2 className="text-white font-bold text-2xl md:text-3xl leading-tight mb-3">
-            Enjoy every mile with adorable companionship.
+            Search rental cars in seconds.
           </h2>
           <p className="text-white/75 text-sm">
-            Tell us where you&apos;re headed and we&apos;ll line up a car
-            that&apos;s ready when you are.
+            Find the right vehicle for your journey with transparent pricing and
+            simple pickup options.
           </p>
         </div>
 
         <div className="flex w-full md:w-auto bg-white rounded-full shadow-lg max-w-md h-12 overflow-hidden">
           <input
-            className="flex-1 px-4 text-sm bg-transparent focus:outline-none"
-            placeholder="City"
+            className="flex-1 px-4 text-sm bg-white focus:outline-none"
+            placeholder="Enter city or location"
+            aria-label="Search city"
           />
 
           <button className="bg-accent hover:bg-accent-dark text-white px-4 flex items-center gap-2">
             <Search size={16} />
+            Search
           </button>
         </div>
       </div>

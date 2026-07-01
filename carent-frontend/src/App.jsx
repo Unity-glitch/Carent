@@ -10,6 +10,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Signin from "./onboarding/Signin";
 import Signup from "./onboarding/Signup";
+import Checkout from "./pages/Checkout";
+import Orders from "./pages/Orders";
 
 import { Routes, Route, useLocation } from "react-router-dom";
 
@@ -34,6 +36,8 @@ export default function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/vehicles" element={<Vehicles />} />
           <Route path="/details/:id" element={<Details />} />
+          <Route path="/checkout/:id" element={<Checkout />} />
+          <Route path="/orders" element={<Orders />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
