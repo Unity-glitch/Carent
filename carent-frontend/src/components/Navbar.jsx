@@ -73,7 +73,7 @@ export default function Navbar() {
         {/* Right side */}
         <div className="flex items-center gap-4">
           {user && (
-            <div className="hidden lg:flex items-center gap-3 rounded-full  bg-gray-50 px-3 py-2 shadow-sm">
+            <div className="hidden lg:flex items-center gap-3 rounded-full  bg-gray-50 px-4 py-2 shadow-sm">
               <img
                 src={getAvatarUrl(user)}
                 alt={user.name || user.email || "User avatar"}
