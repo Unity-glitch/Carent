@@ -5,7 +5,7 @@ import logo from "../assets/logo-white.png";
 import StarField from "./StarField";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { persistUser } from "../utils/authUser";
+import { persistUser } from "../../../carent-backend/utils/authUser";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");

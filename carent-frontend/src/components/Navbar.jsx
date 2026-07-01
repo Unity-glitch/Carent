@@ -7,7 +7,7 @@ import {
   fetchCurrentUser,
   getAvatarUrl,
   getStoredUser,
-} from "../utils/authUser";
+} from "../../../carent-backend/utils/authUser";
 
 const links = [
   { label: "Home", path: "/home" },

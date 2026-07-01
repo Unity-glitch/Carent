@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import { clearStoredUser } from "../utils/authUser";
+import { clearStoredUser } from "../../../carent-backend/utils/authUser";
 
 export default function Logout() {
   const navigate = useNavigate();
