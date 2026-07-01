@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { carData } from "../data/cars";
 import { Settings2, Fuel, Snowflake, ShieldCheck } from "lucide-react";
 
-export default function DetailsContent() {
+export default function DetailsContent({ defaultId }) {
   const { id } = useParams();
+  const carId = id || defaultId;
 
   // Find the exact car by ID
-  const activeCar = carData ? carData.find((car) => car.id === id) : null;
+  const activeCar = carData ? carData.find((car) => car.id === carId) : null;
 
   // State for the primary image preview
   const [activeImage, setActiveImage] = useState("");
