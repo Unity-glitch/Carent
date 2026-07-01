@@ -1,5 +1,4 @@
 const USER_STORAGE_KEY = "carent_user";
-const API_BASE_URL = "https://carent-ymkk.onrender.com";
 
 const normalizeName = (value) => value?.toString().trim() || "";
 
@@ -74,25 +73,6 @@ export const clearStoredUser = () => {
 
   window.localStorage.removeItem(USER_STORAGE_KEY);
   window.dispatchEvent(new Event("auth:update"));
-};
-
-export const fetchCurrentUser = async () => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/api/auth/me`, {
-      credentials: "include",
-    });
-
-    if (!response.ok) {
-      clearStoredUser();
-      return null;
-    }
-
-    const data = await response.json();
-    return persistUser(data.user || data);
-  } catch (error) {
-    console.error("Failed to load current user", error);
-    return null;
-  }
 };
 
 export const getAvatarUrl = (user) => {
