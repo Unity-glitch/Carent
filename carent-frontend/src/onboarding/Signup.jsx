@@ -5,6 +5,7 @@ import logo from "../assets/logo-white.png";
 import StarField from "./StarField";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { persistUser } from "../utils/authUser";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -56,6 +57,7 @@ export default function SignUp() {
 
       if (!res.ok) return toast.error(data.message || "Sign up failed.");
 
+      persistUser(data.user || { email, name: email });
       toast.success(data.message || "Account created successfully!");
       setTimeout(() => navigate("/home"), 1500);
     } catch (err) {

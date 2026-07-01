@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { Car, Menu, X, Phone } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo-black.png";
 import Logout from "../components/Logout";
+import { getAvatarUrl, getStoredUser } from "../utils/authUser";
 
 const links = [
   { label: "Home", path: "/home" },
@@ -14,7 +15,16 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [user, setUser] = useState(getStoredUser());
   const location = useLocation();
+
+  useEffect(() => {
+    const syncUser = () => setUser(getStoredUser());
+    syncUser();
+    window.addEventListener("auth:update", syncUser);
+
+    return () => window.removeEventListener("auth:update", syncUser);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-border">
@@ -48,6 +58,22 @@ export default function Navbar() {
 
         {/* Right side */}
         <div className="flex items-center gap-4">
+          {user && (
+            <div className="hidden lg:flex items-center gap-3 rounded-full border border-gray-200 bg-gray-50 px-3 py-2 shadow-sm">
+              <img
+                src={getAvatarUrl(user)}
+                alt={user.name || user.email || "User avatar"}
+                className="h-9 w-9 rounded-full object-cover"
+              />
+              <div className="flex flex-col">
+                <span className="text-sm font-semibold text-ink">
+                  {user.name || "User"}
+                </span>
+                <span className="text-xs text-muted">{user.email}</span>
+              </div>
+            </div>
+          )}
+
           <div className="hidden lg:flex items-center gap-3">
             <Logout />
           </div>
@@ -76,6 +102,18 @@ export default function Navbar() {
             </Link>
           ))}
 
+          {user && (
+            <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-3 py-2 shadow-sm">
+              <img
+                src={getAvatarUrl(user)}
+                alt={user.name || user.email || "User avatar"}
+                className="h-8 w-8 rounded-full object-cover"
+              />
+              <span className="text-sm font-semibold text-ink">
+                {user.name || "User"}
+              </span>
+            </div>
+          )}
           <Logout />
         </div>
       )}

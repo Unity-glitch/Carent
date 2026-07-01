@@ -1,6 +1,7 @@
 import { MapPin, Mail, Phone, Car, X } from "lucide-react";
 import appStoreImage from "../assets/app-play-store.svg";
 import googlePlayImage from "../assets/google-play-store.svg";
+import logo from "../assets/logo-black.png";
 
 const usefulLinks = ["About us", "Contact us", "Gallery", "Blog", "F.A.Q"];
 const vehicleTypes = ["Sedan", "Cabriolet", "Pickup", "Minivan", "SUV"];
@@ -42,8 +43,8 @@ export default function Footer() {
     <footer className="bg-white">
       {/* Top Section: Branding & Contact Info */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 flex flex-col md:flex-row items-center md:justify-between gap-6 ">
-        <a href="#" className="flex items-center gap-2 font-bold text-ink">
-          <Car size={22} className="text-primary" /> Carent
+        <a href="/home" className="flex items-center gap-2 font-bold text-ink">
+          <img className="w-18 cursor-pointer" src={logo}></img>Carent
         </a>
 
         {/* Contact Badges container: Centered on mobile, left-aligned on desktop */}

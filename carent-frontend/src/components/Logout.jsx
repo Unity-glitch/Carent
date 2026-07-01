@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
+import { clearStoredUser } from "../utils/authUser";
 
 export default function Logout() {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ export default function Logout() {
         method: "POST",
         credentials: "include",
       });
+      clearStoredUser();
       toast.success("Logout successful");
       setTimeout(() => {
         navigate("/signin");
