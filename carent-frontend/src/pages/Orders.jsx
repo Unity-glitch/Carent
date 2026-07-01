@@ -63,6 +63,11 @@ export default function OrdersPage() {
       setOrders(
         data.orders.map((order) => ({
           ...order,
+          id: order._id || order.id,
+          car: order.carName || order.car || "Unknown vehicle",
+          pickup: order.pickupLocation || order.pickup || "Not selected",
+          dropoff: order.dropoffLocation || order.dropoff || "Not selected",
+          total: order.totalCost || order.total || 0,
           progress:
             order.status === "Completed"
               ? 100
