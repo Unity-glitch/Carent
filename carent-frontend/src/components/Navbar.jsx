@@ -80,9 +80,7 @@ export default function Navbar() {
                 className="h-9 w-9 rounded-full object-cover"
               />
               <div className="flex flex-col">
-                <span className="text-sm font-semibold text-ink">
-                  {user.name || "User"}
-                </span>
+                <span className="text-sm text-ink">{user.name || "User"}</span>
               </div>
             </div>
           )}
