@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { carData } from "../data/cars";
 
 const API_BASE_URL =
@@ -14,7 +16,6 @@ function calculateDays(startDate, endDate) {
 }
 
 export default function Checkout() {
-  const navigate = useNavigate();
   const { id } = useParams();
   const activeCar = carData.find((car) => car.id === id);
   const [pickup, setPickup] = useState("");
@@ -49,8 +50,8 @@ export default function Checkout() {
 
   const handleStartPayment = async () => {
     if (!pickupLocation || !dropoffLocation || !pickup || !dropoff) {
-      alert(
-        "Please fill in pickup, dropoff, and rental dates before continuing.",
+      toast.error(
+        "Please complete pickup, dropoff, and dates before checkout.",
       );
       return;
     }
@@ -80,18 +81,27 @@ export default function Checkout() {
         throw new Error(data.message || "Unable to start payment.");
       }
 
+      toast.success("Redirecting to Paystack for payment...");
       window.location.href = data.authorization_url;
     } catch (error) {
       console.error(error);
-      alert(error.message || "Unable to start payment. Please try again.");
+      toast.error(
+        error.message || "Unable to start payment. Please try again.",
+      );
       setIsProcessing(false);
     }
   };
 
   return (
     <div className="bg-white min-h-screen py-16 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[1.4fr_0.9fr]">
-        <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        theme="dark"
+        toastClassName="!bg-[#131929] !border !border-indigo-900/60 !text-white"
+      />
+      <div className="max-w-5xl mx-auto grid gap-8 lg:grid-cols-[1.2fr_0.85fr]">
+        <div className="space-y-8">
           <div className="mb-8">
             <p className="text-sm uppercase tracking-[0.3em] text-muted mb-2">
               Booking checkout
@@ -115,7 +125,7 @@ export default function Checkout() {
                   value={pickupLocation}
                   onChange={(e) => setPickupLocation(e.target.value)}
                   placeholder="City or branch"
-                  className="w-full rounded-2xl border border-border bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="w-full h-11 rounded-lg border border-border bg-white px-4 py-3 text-sm text-muted outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-text"
                 />
               </div>
               <div className="space-y-4">
@@ -126,7 +136,7 @@ export default function Checkout() {
                   value={dropoffLocation}
                   onChange={(e) => setDropoffLocation(e.target.value)}
                   placeholder="City or branch"
-                  className="w-full rounded-2xl border border-border bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="w-full h-11 rounded-lg border border-border bg-white px-4 py-3 text-sm text-muted outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-text"
                 />
               </div>
             </div>
@@ -140,7 +150,7 @@ export default function Checkout() {
                   type="date"
                   value={pickup}
                   onChange={(e) => setPickup(e.target.value)}
-                  className="w-full rounded-2xl border border-border bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="w-full h-11 rounded-lg border border-border bg-white px-4 py-3 text-sm text-muted outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-pointer"
                 />
               </div>
               <div className="space-y-4">
@@ -151,35 +161,33 @@ export default function Checkout() {
                   type="date"
                   value={dropoff}
                   onChange={(e) => setDropoff(e.target.value)}
-                  className="w-full rounded-2xl border border-border bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="w-full h-11 rounded-lg border border-border bg-white px-4 py-3 text-sm text-muted outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-pointer"
                 />
               </div>
             </div>
           </div>
 
           <div className="mt-10 rounded-3xl border border-border bg-white p-6 shadow-sm">
-            <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] items-center">
               <div>
                 <h2 className="text-lg font-bold text-ink">Selected vehicle</h2>
                 <p className="text-sm text-muted mt-1">
                   {activeCar.name} — {activeCar.type}
                 </p>
               </div>
-              <div className="rounded-2xl bg-gray-100 px-4 py-3 text-sm font-semibold text-ink">
+              <div className="rounded-2xl bg-gray-100 px-4 py-3 text-sm font-semibold text-ink text-center">
                 {days} day{days !== 1 ? "s" : ""} rental
               </div>
             </div>
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl bg-gray-50 p-4">
+            <div className="mt-6 grid gap-4 lg:grid-cols-[0.95fr_0.85fr]">
+              <div className="rounded-2xl bg-gray-50 p-4 flex flex-col gap-2">
                 <p className="text-sm text-muted">Daily rate</p>
-                <p className="mt-2 text-xl font-bold text-ink">
-                  ${activeCar.price}
-                </p>
+                <p className="text-xl font-bold text-ink">${activeCar.price}</p>
               </div>
-              <div className="rounded-2xl bg-gray-50 p-4">
+              <div className="rounded-2xl bg-gray-50 p-4 flex flex-col gap-2">
                 <p className="text-sm text-muted">Total cost</p>
-                <p className="mt-2 text-xl font-bold text-ink">${total}</p>
+                <p className="text-xl font-bold text-ink">${total}</p>
               </div>
             </div>
 
@@ -197,44 +205,50 @@ export default function Checkout() {
 
         <aside className="space-y-6">
           <div className="rounded-3xl border border-border bg-gray-50 p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <p className="text-sm text-muted">Order summary</p>
-                <h2 className="text-xl font-bold text-ink">{activeCar.name}</h2>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <img
+                  src={activeCar.image}
+                  alt={activeCar.name}
+                  className="h-24 w-32 rounded-3xl object-cover border border-border"
+                />
+                <div>
+                  <p className="text-sm text-muted">Order summary</p>
+                  <h2 className="text-xl font-bold text-ink">
+                    {activeCar.name}
+                  </h2>
+                  <p className="text-sm text-muted mt-1">{activeCar.type}</p>
+                </div>
               </div>
-              <span className="text-sm font-semibold text-primary">
-                ${activeCar.price}/day
-              </span>
+              <div className="rounded-2xl bg-white p-4 text-sm text-muted">
+                <div className="flex items-center justify-between py-2 border-b border-border">
+                  <span>Pickup branch</span>
+                  <span>{pickupLocation || "Not selected"}</span>
+                </div>
+                <div className="flex items-center justify-between py-2 border-b border-border">
+                  <span>Return branch</span>
+                  <span>{dropoffLocation || "Not selected"}</span>
+                </div>
+                <div className="flex items-center justify-between py-2 border-b border-border">
+                  <span>Pickup date</span>
+                  <span>{pickup || "Not selected"}</span>
+                </div>
+                <div className="flex items-center justify-between py-2">
+                  <span>Return date</span>
+                  <span>{dropoff || "Not selected"}</span>
+                </div>
+              </div>
+              <div className="rounded-3xl border border-border bg-white p-6 shadow-sm">
+                <h3 className="text-base font-bold text-ink mb-3">
+                  Why pay with Paystack?
+                </h3>
+                <ul className="space-y-3 text-sm text-muted">
+                  <li>Fast, secure online payment.</li>
+                  <li>Card and bank transfer support.</li>
+                  <li>Instant booking confirmation.</li>
+                </ul>
+              </div>
             </div>
-            <div className="space-y-3 text-sm text-muted">
-              <div className="flex items-center justify-between">
-                <span>Pickup branch</span>
-                <span>{pickupLocation || "Not selected"}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span>Return branch</span>
-                <span>{dropoffLocation || "Not selected"}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span>Pickup date</span>
-                <span>{pickup || "Not selected"}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span>Return date</span>
-                <span>{dropoff || "Not selected"}</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-border bg-white p-6 shadow-sm">
-            <h3 className="text-base font-bold text-ink mb-3">
-              Why pay with Paystack?
-            </h3>
-            <ul className="space-y-3 text-sm text-muted">
-              <li>Fast, secure online payment.</li>
-              <li>Card and bank transfer support.</li>
-              <li>Instant booking confirmation.</li>
-            </ul>
           </div>
         </aside>
       </div>
