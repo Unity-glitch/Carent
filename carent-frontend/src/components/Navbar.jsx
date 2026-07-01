@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo-black.png";
 import Logout from "../components/Logout";
@@ -21,6 +21,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(getStoredUser());
   const location = useLocation();
+  const displayName = user?.name
+    ? user.name.split(" ").slice(0, 2).join(" ")
+    : "User";
 
   useEffect(() => {
     const syncUser = async () => {
@@ -73,17 +76,25 @@ export default function Navbar() {
         {/* Right side */}
         <div className="flex items-center gap-4">
           {user && (
-            <div className="hidden lg:flex items-center gap-3 rounded-full  bg-gray-50 px-4 py-2 shadow-sm">
+            <div className="hidden lg:flex items-center gap-3 rounded-full bg-gray-50 px-4 py-2 shadow-sm">
               <img
                 src={getAvatarUrl(user)}
-                alt={user.name || user.email || "User avatar"}
+                alt={displayName}
                 className="h-9 w-9 rounded-full object-cover"
               />
               <div className="flex flex-col">
-                <span className="text-sm text-ink">{user.name || "User"}</span>
+                <span className="text-sm text-ink">{displayName}</span>
               </div>
             </div>
           )}
+
+          <Link
+            to="/orders"
+            className="hidden lg:inline-flex items-center gap-2 rounded-full bg-gray-50 px-4 py-2 text-sm font-semibold text-ink transition hover:bg-gray-100"
+          >
+            <ShoppingCart size={18} />
+            Orders
+          </Link>
 
           <div className="hidden lg:flex items-center gap-3">
             <Logout />
@@ -125,6 +136,13 @@ export default function Navbar() {
               </span>
             </div>
           )}
+          <Link
+            to="/orders"
+            className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-ink transition hover:bg-gray-50"
+          >
+            <ShoppingCart size={16} />
+            Orders
+          </Link>
           <Logout />
         </div>
       )}
