@@ -129,7 +129,7 @@ export default function Hero() {
               />
             </div>
             <StarField />
-            <button className="bg-indigo hover:bg-indigo-dark text-white font-semibold rounded-full py-3.5 mt-2 transition-colors w-full">
+            <button className="bg-blue hover:bg-blue-dark text-white font-semibold rounded-full py-3.5 mt-2 transition-colors w-full">
               Book now
             </button>
           </div>
