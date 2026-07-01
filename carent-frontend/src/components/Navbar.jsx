@@ -3,7 +3,11 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo-black.png";
 import Logout from "../components/Logout";
-import { getAvatarUrl, getStoredUser } from "../utils/authUser";
+import {
+  fetchCurrentUser,
+  getAvatarUrl,
+  getStoredUser,
+} from "../utils/authUser";
 
 const links = [
   { label: "Home", path: "/home" },
@@ -19,8 +23,15 @@ export default function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
-    const syncUser = () => {
-      setUser(getStoredUser());
+    const syncUser = async () => {
+      const storedUser = getStoredUser();
+      if (storedUser) {
+        setUser(storedUser);
+        return;
+      }
+
+      const currentUser = await fetchCurrentUser();
+      setUser(currentUser);
     };
 
     syncUser();
