@@ -100,7 +100,7 @@ export default function Checkout() {
         theme="dark"
         toastClassName="!bg-[#131929] !border !border-indigo-900/60 !text-white"
       />
-      <div className="max-w-5xl mx-auto grid gap-8 lg:grid-cols-[1.2fr_0.85fr]">
+      <div className="max-w-5xl mx-auto grid gap-8 lg:grid-cols-[1.2fr_0.85fr] items-stretch">
         <div className="space-y-8">
           <div className="mb-8">
             <p className="text-sm uppercase tracking-[0.3em] text-muted mb-2">
@@ -203,24 +203,24 @@ export default function Checkout() {
           </div>
         </div>
 
-        <aside className="space-y-6">
-          <div className="rounded-3xl border border-border bg-gray-50 p-6 shadow-sm">
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <img
-                  src={activeCar.image}
-                  alt={activeCar.name}
-                  className="h-24 w-32 rounded-3xl object-cover border border-border"
-                />
-                <div>
-                  <p className="text-sm text-muted">Order summary</p>
-                  <h2 className="text-xl font-bold text-ink">
-                    {activeCar.name}
-                  </h2>
-                  <p className="text-sm text-muted mt-1">{activeCar.type}</p>
-                </div>
+        <aside className="space-y-6 h-full">
+          <div className="rounded-3xl border border-border bg-white shadow-sm h-full overflow-hidden flex flex-col">
+            <div className="relative h-80 w-full overflow-hidden">
+              <img
+                src={activeCar.image}
+                alt={activeCar.name}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                <p className="text-sm text-white/80">Order summary</p>
+                <h2 className="text-xl font-bold text-white mt-1">
+                  {activeCar.name}
+                </h2>
+                <p className="text-sm text-white/80 mt-1">{activeCar.type}</p>
               </div>
-              <div className="rounded-2xl bg-white p-4 text-sm text-muted">
+            </div>
+            <div className="flex-1 bg-gray-50 p-6 flex flex-col gap-6">
+              <div className="rounded-2xl bg-white p-4 text-sm text-muted flex-1">
                 <div className="flex items-center justify-between py-2 border-b border-border">
                   <span>Pickup branch</span>
                   <span>{pickupLocation || "Not selected"}</span>
