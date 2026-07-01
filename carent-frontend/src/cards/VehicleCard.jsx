@@ -48,7 +48,7 @@ export default function VehicleCard({
 
       <Link
         to={`/details/${id}`}
-        className="bg-blue-600 text-white text-center px-4 py-2 rounded-lg text-sm font-medium"
+        className="bg-indigo-600 text-white text-center px-4 py-2 rounded-lg text-sm font-medium"
       >
         View Details
       </Link>

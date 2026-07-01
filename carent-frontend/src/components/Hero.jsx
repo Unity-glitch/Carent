@@ -35,7 +35,7 @@ export default function Hero() {
             confidence, comfort, and a price that fits your budget.
           </p>
           <div className="flex justify-center sm:justify-start">
-            <button className="bg-accent hover:bg-accent-dark text-white font-semibold rounded-full px-7 py-3.5 transition-colors">
+            <button className="bg-indigo hover:bg-indigo-dark text-white font-semibold rounded-full px-7 py-3.5 transition-colors">
               Get Started
             </button>
           </div>
@@ -129,7 +129,7 @@ export default function Hero() {
               />
             </div>
             <StarField />
-            <button className="bg-accent hover:bg-accent-dark text-white font-semibold rounded-full py-3.5 mt-2 transition-colors w-full">
+            <button className="bg-indigo hover:bg-indigo-dark text-white font-semibold rounded-full py-3.5 mt-2 transition-colors w-full">
               Book now
             </button>
           </div>
